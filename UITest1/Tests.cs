@@ -8,7 +8,7 @@ using Xamarin.UITest.Queries;
 namespace UITest1
 {
     [TestFixture(Platform.Android)]
-    [TestFixture(Platform.iOS)]
+  //  [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;
@@ -25,14 +25,7 @@ namespace UITest1
             app = AppInitializer.StartApp(platform);
         }
 
-        //[Test]
-        public void WelcomeTextIsDisplayed()
-        {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
-
-            Assert.IsTrue(results.Any());
-        }
+        
 
         [Test]
         public void XamarinTest()
@@ -45,8 +38,7 @@ namespace UITest1
             app.ClearText(x => x.Id("NoResourceEntry-30"));
             app.EnterText(x => x.Id("NoResourceEntry-30"), "Universe helps you, Dedication is the KEY");
             app.Tap(x => x.Text("Save"));
-            app.SwipeRightToLeft();
-            app.SwipeLeftToRight();
+            
 
 
             // app.Tap(x => x.Marked("More options"));
